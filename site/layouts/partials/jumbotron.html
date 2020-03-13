@@ -1,17 +1,65 @@
-<div class="pv5 pv6-l ph3 bg-center cover" style="background-image: url('{{.imageUrl}}')">
-  <div class="mw7 center ph3">
-    <div class="db mb3">
-      <div class="mw7 relative bg-fix-primary mb3">
-        <h1 class="f2 f1-l b di lh-title mb3 white mw6 bg-primary">
-          {{.title}}
-        </h1>
-      </div>
-      <div class="mw7 relative bg-fix-primary">
-        {{ if .subtitle }}
-        <p class="b f4 di lh-title mb3 white mw6 bg-primary">
-          {{.subtitle}}
-        </p>
-        {{ end }}
+<style type="text/css">
+  .image-changer, #bg1 .image-changer { background: url({{.bg1}}); }
+  {{ if .bg2 }}
+    #bg2 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F4.jpg?v=1581350379383); }
+  {{ end }}
+  {{ if .bg3 }}
+    #bg3 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F13.jpg?v=1581350379510); }
+  {{ end }}
+  {{ if .bg4 }}
+    #bg4 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F6.jpg?v=1581350380240); }
+  {{ end }}
+  {{ if .bg5 }}
+    #bg5 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F7.jpg?v=1581350380262); }
+  {{ end }}
+  {{ if .bg6 }}
+    #bg6 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F10.jpg?v=1581350380656); }
+  {{ end }}
+  {{ if .bg7 }}
+    #bg7 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F11.jpg?v=1581350380723); }
+  {{ end }}
+  {{ if .bg8 }}
+    #bg8 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F9.jpg?v=1581350380906); }
+  {{ end }}
+  {{ if .bg9 }}
+    #bg9 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F3.jpg?v=1581350381127); }
+  {{ end }}
+  {{ if .bg10 }}
+    #bg10 .image-changer { background: url(https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F5.jpg?v=1581350379241); }
+  {{ end }}
+</style>
+
+<div class="image-changer">
+  <!-- Populated by public/css/interval-background-changer.css & public/js/interval-background-changer.js -->
+  <div class="cta_text-container">
+    <div class="cta">
+      <section>
+        <div class="cta_text cta_text-wrap">
+          <div>
+            {{ if .subtitle }}
+              <h3 id="smallTextAboveHeading">
+                {{.subtitle}}
+              </h3>
+            {{ end }}
+            <h1 id="ctaHeading">{{.title}}</h1>
+            {{ if .shortSentence }}
+              <p id="ctaText">
+                {{.shortSentence}}
+              </p>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+      <div class="cta_content_container">
+        <div class="cta_content_inner">
+          <div class="cta_search_box">
+            <section id="search">
+              <div class="search-wrap">
+                <div id="search_form"></div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 import React from "react";
-import format from "date-fns/format";
+//import format from "date-fns/format";
 
-import Jumbotron from "./components/jumbotron";
+//import Jumbotron from "./components/jumbotron";
 
 export default class PostPreview extends React.Component {
   render() {
@@ -10,11 +10,11 @@ export default class PostPreview extends React.Component {
 
     // Bit of a nasty hack to make relative paths work as expected as a background image here
     if (image && !image.fileObj) {
-        image = window.parent.location.protocol + "//" + window.parent.location.host + image;
+      image = window.parent.location.protocol + "//" + window.parent.location.host + image;
     }
 
     return <div>
-        <Jumbotron image={image} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])}/>
+        <Jumbotron image={image} bg1={entry.getIn(["data", "bg1"])} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])} shortSentence={entry.getIn(["data", "shortSentence"])} />
 
         <div className="bg-grey-1 pv4">
           <div className="flex-l mhn1-l ph3 center mw7">
@@ -30,7 +30,7 @@ export default class PostPreview extends React.Component {
 
             <div className="flex-ns mhn2-ns mb3">
               {(entry.getIn(["data", "products"]) || []).map((product, i) => <div className="ph2-ns w-50-ns" key={i}>
-                <img src={getAsset(product.get("image"))} alt="" className="center db mb3" style={{width: "240px"}}/>
+                <img src={getAsset(product.get("image"))} alt="" className="center db mb3" style={{width: "240px"}} />
                 <p>{product.get("text")}</p>
               </div>)}
             </div>
@@ -64,6 +64,6 @@ export default class PostPreview extends React.Component {
         </div>
 
 
-    </div>
+    </div>;
   }
 }

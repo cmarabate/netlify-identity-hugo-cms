@@ -1,10 +1,12 @@
 ---
 title: Great coffee with a conscience
 subtitle: Support sustainable farming while enjoying a cup
-image: /img/home-jumbotron.jpg
+shortSentence: Lorem ipsum dolor sit amet consectetur
+bg1: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F14.jpg?v=1581350380951
+
 blurb:
-  heading: WOOOT!?
-  sub_heading: WOOOT WOOOT!?
+  heading: Lorem Ipsum
+  sub_heading: Lorem ipsum dolor sit
   text: >-
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans

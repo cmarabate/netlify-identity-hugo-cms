@@ -1,0 +1,114 @@
+.image-changer {
+    -webkit-transition: background 1.8s ease-in-out;
+    -o-transition: background 1.8s ease-in-out;
+    transition: background 1.8s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 77px);
+}
+
+
+
+/* CTA Text Content */
+
+.cta_text-container {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: static;
+    z-index: 2;
+    padding-top: calc(33vh + 50px);
+    width: 100vw;
+}
+
+.cta_text-container section {
+    margin: 0 auto;
+    line-height: 0;
+    padding: 0 10px;
+    position: static;
+}
+
+.cta_text-container .cta_text-wrap {
+    display: inline-block;
+    width: 100%;
+}
+
+.cta_text-container .cta_text-wrap div {
+    text-align: center;
+    color: white;
+}
+
+.cta_text-container .cta_text-wrap div h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    font-weight: normal;
+    text-shadow: 3px 3px 1.5px rgba(0, 0, 0, 0.9);
+}
+
+.cta_text-container .cta_text-wrap div h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    margin: 5px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: normal;
+    text-shadow: 3px 3px 1.5px rgba(0, 0, 0, 0.9);
+}
+
+.cta_text-container #ctaText {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  text-shadow: 3px 3px 1.5px rgba(0, 0, 0, 0.9);
+}
+
+
+@media (max-width: 1023px) {
+  
+  .cta_text-container .cta_text-wrap div h3 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .cta_text-container .cta_text-wrap div h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .cta_text-container .cta_text-wrap div h3 {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .cta_text-container .cta_text-wrap div h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+}
+
+
+
+/* CTA Search Field */
+.cta_search_box .form {
+    text-align: center;
+}
+
+.cta_text-container .cta_text-wrap {
+    display: inline-block;
+}
+
+#ctaText {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
