@@ -1,19 +1,93 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+  <div class="fixed-wrap">
+    <div class="name-logo">
+      <a href="/"
+        ><img
+          src="https://cdn.glitch.com/d5c2646f-7f40-40ae-90bd-b82852980f4b%2Flogo.png?v=1581616618866"
+      /></a>
+    </div>
+    <div class="desktop-menu">
+      <nav id="main-menu" class="main-menu" aria-label="Main menu">
+        <ul>
+          <li>
+            <a>Dropdown Menu Item</a>
+            <ul>
+              <li><a>‣ Dropdown Item</a></li>
+              <li><a>‣ Dropdown Item</a></li>
+              <li><a>‣ Dropdown Item</a></li>
+              <li><a>‣ Dropdown Item</a></li>
+              <li><a>‣ Dropdown Item</a></li>
+            </ul>
+          </li>
+          <div id="menu"></div>
+          <div id="menuItems"></div>
+        </ul>
+      </nav>
+    </div>
+    <!-- fixed-wrap -->
 
-	<!-- Logo -->
-	<a href="/" class="ph3 db mr4 h-50 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
+    <div class="mobile-menu">
+      <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+                A fake / hidden checkbox is used as click reciever,
+                so I can use the :checked selector on it.
+                -->
+          <input type="checkbox" />
 
-	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
+          <!--
+                Some spans to act as a hamburger.
+                -->
 
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
+          <div class="menuToggle-wrap">
+            <div class="hamburger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="text-next-to-hamburger">
+              Menu
+            </div>
+          </div>
 
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
+          <!--
+                Menu has to be inside of the button
+                -->
+          <ul id="menu">
+            <div id="slide-in-wrap_menu-wrap">
+              <li>
+                <ul>
+                  <div x-data="{ open: false }">
+                    <a
+                      @mouseenter.once="
+                                                                fetch('menus/menu-items/dropdown-menu-items/main-menu/dropdown-name.html')
+                                                                    .then(response => response.text())
+                                                                    .then(html => { $refs.dropdown.innerHTML = html })
+                                                            "
+                      @click="open = true"
+                      >Dropdown Menu +</a
+                    >
 
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
-	</ul>
-
-</nav>
+                    <div
+                      x-ref="dropdown"
+                      x-show="open"
+                      @click.away="open = false"
+                      class="dropdown"
+                    >
+                      <div class="loading">
+                        Loading...
+                      </div>
+                    </div>
+                  </div>
+                  <li><a>Top-level Menu Item</a></li>
+                  <li><a>Top-level Menu Item</a></li>
+                </ul>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- mobile-menu -->
+  </div>
+  <div w3-include-html="menus/left-menu.html"></div>
+  <div w3-include-html="menus/right-menu.html"></div>

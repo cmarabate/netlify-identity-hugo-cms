@@ -1,0 +1,1086 @@
+.name-logo {
+  color: white;
+  position: relative;
+  top: 10px;
+  left: 0px;
+  z-index: 99999;
+  max-width: 200px;
+}
+
+/*
+.fixed-wrap #main-menu > ul > li > * {
+  font-size: 1rem !important;
+}
+
+.fixed-wrap #main-menu > ul > li > ul > li >* {
+  font-size: 1.2rem !important;
+}
+*/
+
+
+.fixed-wrap .main-menu a:hover, .fixed-wrap .main-menu a:focus {
+    border-bottom: 2px solid #233c99;
+}
+
+.fixed-wrap .main-menu ul li ul li a:hover, .fixed-wrap .main-menu ul li ul li a:focus {
+    border-bottom: 2px solid rgba(198, 8, 0, 0);
+    border-left: 2px solid #233c99;
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu {
+    display: none;
+  }
+  .desktop-menu {
+    display: block;
+  }
+}
+
+
+@media (max-width: 1023px) {
+  
+  .mobile-menu {
+    display: block;
+        height: 50px;
+        background: #1C1C1C;
+    position: relative;
+    bottom: 32px;
+  }
+    .mobile-menu a,
+    .mobile-menu label {
+        color: white;
+    }
+
+    .label.header {
+        border-bottom: solid 1px rgba(1, 114, 167, 0);
+    }
+
+  .desktop-menu {
+    display: none;
+  }
+}
+
+@supports (position: fixed) {
+    .fixed-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 50px;
+        z-index: 20;
+        border-bottom: 2px solid #233c99;
+    }    
+}
+
+
+
+
+
+/* ---------------------- Desktop Menu ---------------------- */
+
+.main-menu {
+position: absolute;
+display: none;
+left: -200px;
+top: 0;
+height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    -webkit-transition: left 0.3s ease,
+                    -webkit-box-shadow 0.3s ease;
+    transition: left 0.3s ease,
+                    -webkit-box-shadow 0.3s ease;
+    -o-transition: left 0.3s ease,
+                    box-shadow 0.3s ease;
+    transition: left 0.3s ease,
+                    box-shadow 0.3s ease;
+    transition: left 0.3s ease,
+                    box-shadow 0.3s ease,
+                    -webkit-box-shadow 0.3s ease;
+    z-index: 999;
+}
+
+.main-menu ul {
+list-style: none;
+margin: 0;
+padding: 2.5em 0 0;
+/* Hide shadow w/ -8px while 'closed' */
+-webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+        box-shadow: -8px 0 8px rgba(0,0,0,.5);
+/* min-height: 100%; */
+background: #1a1a1a;
+}
+
+.main-menu a {
+display: block;
+padding: 0.7rem 15px;
+line-height: 1rem;
+font-size: 1rem;
+color: #fff;
+text-decoration: none;
+border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+
+.main-menu a:hover,
+.main-menu a:focus {
+background: #333;
+text-decoration: none;
+border-bottom: 1px solid #233c99;
+}
+
+.main-menu:target ul,
+.main-menu[aria-expanded="true"] ul {
+position: relative;
+z-index: 1000;
+}
+
+@media (min-width: 1024px) {
+
+    .fixed-wrap {
+        background: #1C1C1C;
+    }
+    
+    .menu-toggle,
+    .main-menu .menu-close {
+        display: none;
+    }
+    
+    /* Undo positioning of off-canvas menu */
+    .main-menu {
+        position: relative;
+            right: 0;
+            top: auto;
+            height: auto;
+        display: block;
+    }
+    
+    .main-menu ul {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        
+        /* Undo off-canvas styling */
+        padding: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        height: auto;
+        width: auto;
+        background: none;
+    }
+
+}
+
+
+
+/* Customization */
+.desktop-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: white;
+}
+
+.fa-bars:before, .main-menu a, .menu-toggle {
+    color: white;
+}
+
+/* If I want to change the color of the hamburger toggle when hovering over it for some reason 
+.fa-bars:hover:before {
+    color: #d1d1d1;
+}
+*/
+
+.main-menu a:hover, .main-menu a:focus {
+    text-decoration: none;
+}
+
+.fa-bars:before {
+    position: fixed;
+    top: 15px;
+    background: #1C1C1C;
+    padding: 10px;
+    z-index: 11;
+}
+
+.main-menu, .main-menu:target, .main-menu[aria-expanded="true"] {
+    overflow: initial;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.main-menu a.menu-close {
+    border: none;
+    height: 18px;
+    padding: 10px;
+}
+
+.fa.fa-close {
+    font-size: 17px;
+    position: relative;
+    bottom: 4px;
+}
+
+@media (min-width: 1024px) {
+    .main-menu a:hover, .main-menu a:focus {
+        color: white;
+        background: #333;
+        text-decoration: none;
+    }
+
+    /* Fixes it so the mobile menu backdrop doesn't stay there if you resize the window back above 768 while the menu is still open */
+    .main-menu:target + .backdrop, .main-menu[aria-expanded="true"] + .backdrop {
+        display: none;
+    }
+    
+}
+
+/* Submenus */
+.desktop-menu ul li input {
+    display: none;
+}
+
+.desktop-menu ul li label {
+    display: block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #383838;
+    font-weight: bold;
+}
+
+.desktop-menu ul li ul {
+    padding: 0;
+}
+
+.desktop-menu ul li label {
+    border-bottom: 0;
+}
+
+.desktop-menu ul li ul li a {
+    border-left: 1px solid rgb(198, 6, 0, 0);
+}
+
+.desktop-menu ul li ul li a:hover {
+    border-bottom: 1px solid rgb(198, 6, 0, 0);
+    border-left: 1px solid #233c99;
+}
+
+.desktop-menu ul li ul li:first-child a {
+    border-top: 0;
+}
+
+.desktop-menu ul li ul li:first-child a:before {
+    content:"• ";
+}
+
+.desktop-menu ul li ul {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.desktop-menu ul li label,
+.desktop-menu ul li ul {
+    background: #333;
+}
+
+.desktop-menu ul li ul li a:hover {
+    background: #4e4e4e;
+}
+
+@media (min-width: 1024px) {
+
+
+    .desktop-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background: #1C1C1C;
+        max-height: 40px;
+    }
+
+    .desktop-menu .main-menu {
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: initial;
+        text-align: right;
+    }
+
+    .desktop-menu .main-menu li {
+        /* margin: 0 auto; */
+        width: 100%;
+        text-align: left;
+    }
+
+
+    .desktop-menu ul li label {
+        border: 0;
+        background: transparent;
+        padding: 1.2rem 1rem 1rem 1rem !important;
+        position: relative;
+        bottom: .2rem;
+    }
+
+    .desktop-menu ul li ul {
+        display: none;
+    }
+
+    .desktop-menu ul li:hover ul {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
+        box-shadow: -8px 0 8px rgba(0,0,0,.5);
+        width: auto;
+        background: #1a1a1a;
+    }
+
+    .desktop-menu ul li ul li:first-child a {
+        border-top: 0px solid #383838;
+    }
+
+    .desktop-menu ul li ul li a {
+        color: white;
+        border-bottom: 1px solid #383838;
+    }
+
+    .desktop-menu ul li ul li a:hover {
+        color: white;
+        background: #333;
+        border-bottom: 1px solid #383838;
+    }
+
+    .desktop-menu ul li ul li:first-child a:before {
+        content: none;
+    }
+
+}
+
+
+
+/* Make menu items responsive above mobile break point and below 1100px  */
+@media (min-width: 1024px) and (max-width: 1600px) {
+
+    .desktop-menu .main-menu a,
+    .desktop-menu ul li label {
+        font-size: 1vw;
+    }
+
+    .desktop-menu ul li label {
+        border: 0;
+        background: transparent;
+        padding: 1.2rem 1rem 1.2rem 1rem !important;
+        position: relative;
+        bottom: 0rem;
+    }
+
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+    .desktop-menu .main-menu a,
+    .desktop-menu ul li label {
+        /* font-size: .8vw; */
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .desktop-menu .main-menu a,
+    .desktop-menu ul li label {
+        white-space: nowrap;
+        padding: 1rem;
+    }
+
+}
+
+
+
+/* ---------------------- Mobile Slideout Menu ---------------------- */
+a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  -webkit-transition: color 0.3s ease;
+  
+  -o-transition: color 0.3s ease;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #233c99;
+}
+
+.mobile-menu #menuToggle
+{
+  display: block;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.mobile-menu #menuToggle input
+{
+  display: block;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 13; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+
+
+
+
+/* ---------- Hamburger Toggles ---------- */
+.mobile-menu .menuToggle-wrap {
+    position: fixed;
+    color: white;
+    padding-top: 0;
+    display: contents;
+}
+
+.mobile-menu #menuToggle .hamburger-icon {
+    float: right;
+    margin-left: 15px;
+}
+
+
+
+/* ---------- Text Next to Hamburger Toggles ---------- */
+.mobile-menu #menuToggle .text-next-to-hamburger {
+    float: left;
+    font-size: 20px;
+}
+
+
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+.mobile-menu #menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #1C1C1C;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  -webkit-transform-origin: 0% 0%;
+  
+      -ms-transform-origin: 0% 0%;
+  
+          transform-origin: 0% 0%;
+ 
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ 
+  transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ 
+  -o-transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ 
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ 
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.mobile-menu #menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+
+/* ---------- Initial Position Before being Toggled Open ---------- */
+.mobile-menu #menu {
+  -webkit-transform: translate(0, -100%);
+      -ms-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+
+
+/* ---------- Position they slide into when Toggled Open ---------- */
+.mobile-menu .slide-in-wrap {
+    position: fixed;
+    z-index: 11;
+    top: 50px;
+    right: 0px;
+}
+
+
+
+
+
+/* Slide in Wraps - Menu Wraps */
+.mobile-menu #slide-in-wrap_menu-wrap {
+    display: block;
+    overflow: auto;
+    max-height: calc(100vh - 114px);
+    z-index: 12;
+}
+
+.mobile-menu #slide-in-wrap_menu-wrap a:last-child {
+    padding-bottom: 10px;
+}
+
+.mobile-menu #slide-in-wrap_menu-wrap::-webkit-scrollbar-thumb {
+    background: white !important;
+}
+.mobile-menu #slide-in-wrap_menu-wrap::-webkit-scrollbar-thumb:hover {
+    background: #233c99 !important;
+}
+
+
+
+/*
+ * And let's slide it in from the left
+ */
+.mobile-menu #menuToggle input:checked ~ ul
+{
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+.mobile-menu ul ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: 5px;
+}
+
+.mobile-menu ul ul li a {
+    font-size: 18px;
+}
+
+
+
+.mobile-menu #menu {
+    padding: 0 0 0 25px;
+    margin: 0;
+    right: -15px;
+    top: -15px;
+    z-index: 11;
+}
+
+.mobile-menu #menu::-webkit-scrollbar {
+
+}
+
+.mobile-menu #menu::-webkit-scrollbar-track {
+
+}
+
+.mobile-menu #menu::-webkit-scrollbar-thumb {
+    background: white !important;
+}
+
+.mobile-menu #menu::-webkit-scrollbar-thumb:hover {
+    background: #233c99 !important;
+}
+
+.mobile-menu #menuToggle input:checked ~ ul {
+    position: fixed;
+    top: 50px;
+    right: 0px;
+}
+
+.mobile-menu #menuToggle {
+    position: absolute;
+    left: unset;
+    right: 15px;
+}
+
+
+
+
+
+/*
+ * Just a quick hamburger
+ */
+.mobile-menu #menuToggle .menuToggle-wrap .hamburger-icon span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 12;
+  background: white;
+  border-radius: 3px;
+  -webkit-transform-origin: 4px 0px;
+      -ms-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  -o-transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.mobile-menu #menuToggle .menuToggle-wrap .hamburger-icon span:first-child
+{
+  -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.mobile-menu #menuToggle .menuToggle-wrap .hamburger-icon span:nth-last-child(2)
+{
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.mobile-menu #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span:nth-last-child(3)
+{
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(0px, -4px);
+      -ms-transform: rotate(45deg) translate(0px, -4px);
+          transform: rotate(45deg) translate(0px, -4px);
+  background: white;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.mobile-menu #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span:nth-last-child(2)
+{
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+      -ms-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.mobile-menu #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span
+{
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+      -ms-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+  background: white;
+}
+
+
+
+
+
+/* Additional Slide-in Menus */
+/* ---------------------- Slide in Menus ---------------------- */
+.slide-in-wrap #menu {
+  position: absolute;
+  width: auto;
+  white-space: nowrap;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #1C1C1C;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  -o-transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.slide-in-wrap button {
+    background-color: #233c99;
+    margin-bottom: 10px;
+}
+
+.slide-in-wrap button:hover {
+    background-color: white;
+    color: #1C1C1C;
+}
+
+
+/* ---------- Initial Position Before being Toggled Open ---------- */
+.slide-in-wrap.left_slide-in-wrap #menu {
+    -webkit-transform: translate(-100%, 0);
+        -ms-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+}
+
+.slide-in-wrap.right_slide-in-wrap #menu {
+    -webkit-transform: translate(100%, 0);
+        -ms-transform: translate(100%, 0);
+            transform: translate(100%, 0);
+}
+
+
+/* ---------- Position they slide into when Toggled Open ---------- */
+.slide-in-wrap {
+    position: fixed;
+    z-index: 11;
+}
+
+.slide-in-wrap.left_slide-in-wrap {
+    top: 50px;
+    left: 0px;
+}
+
+.slide-in-wrap.right_slide-in-wrap {
+    top: 50px;
+    right: 0px;
+}
+
+
+/* Removes the transform position when Toggled Open which returns these menus to their absolute positions which are set above */
+.slide-in-wrap #menuToggle input:checked ~ ul {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+
+
+/* ---------- Hamburger Toggles ---------- */
+.slide-in-wrap .menuToggle-wrap {
+    padding: 22px 15px;
+    background: #233c99;
+    color: white;
+}
+
+.slide-in-wrap #menuToggle .hamburger-icon {
+    position: relative;
+    bottom: 11px;
+}
+
+.slide-in-wrap.left_slide-in-wrap #menuToggle .hamburger-icon {
+    float: left;
+    margin-right: 15px;
+}
+
+.slide-in-wrap.right_slide-in-wrap #menuToggle .hamburger-icon {
+    float: right;
+    margin-left: 15px;
+}
+
+/* ---------- Text Next to Hamburger Toggles ---------- */
+.slide-in-wrap #menuToggle .text-next-to-hamburger {
+    position: relative;
+    bottom: 9px;
+}
+
+.slide-in-wrap.left_slide-in-wrap #menuToggle .text-next-to-hamburger {
+    float: right;
+}
+
+.slide-in-wrap.right_slide-in-wrap #menuToggle .text-next-to-hamburger {
+    float: left;
+}
+
+
+.slide-in-wrap h3 {
+    color: white;
+    position: relative;
+    bottom: 25px;
+    font-weight: bold;
+}
+
+.slide-in-wrap a {
+    color: white;
+    display: list-item;
+    margin: 5px 10px 5px 0;
+}
+.slide-in-wrap a:hover {
+    color: #233c99;
+}
+
+.slide-in-wrap #menu {
+    padding: 50px 25px 10px 25px;
+    margin: 0;
+    top: -15px;
+    z-index: 11;
+}
+
+
+/* Position of Left Slide in Wrap before toggling it open */
+.slide-in-wrap.left_slide-in-wrap #menu  {
+    left: 0px;
+}
+
+.slide-in-wrap.left_slide-in-wrap #menu > * {
+  left: 50px;
+}
+
+/* Position of Right Slide in Wrap before toggling it open */
+.slide-in-wrap.right_slide-in-wrap #menu  {
+    right: 0px;
+    width: auto;
+    white-space: nowrap;
+}
+
+
+/* Slide in Wraps - Menu Wraps */
+#slide-in-wrap_menu-wrap {
+    display: block;
+    overflow: auto;
+    max-height: calc(100vh - 198px);
+    z-index: 12;
+    color: white; 
+}
+
+#slide-in-wrap_menu-wrap a:last-child {
+    padding-bottom: 10px;
+}
+
+#slide-in-wrap_menu-wrap::-webkit-scrollbar-thumb {
+    background: white !important;
+}
+#slide-in-wrap_menu-wrap::-webkit-scrollbar-thumb:hover {
+    background: #233c99 !important;
+}
+
+
+
+
+
+/* Slide in Wraps - Menu Toggles */
+.slide-in-wrap #menuToggle
+{
+  display: block;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+.slide-in-wrap #menuToggle input
+{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 13; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+.slide-in-wrap #menuToggle .menuToggle-wrap .hamburger-icon span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 12;
+  background: white;
+  border-radius: 3px;
+  -webkit-transform-origin: 4px 0px;
+      -ms-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  -o-transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease,
+              -webkit-transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.slide-in-wrap #menuToggle .menuToggle-wrap .hamburger-icon span:first-child
+{
+  -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+.slide-in-wrap #menuToggle .menuToggle-wrap .hamburger-icon span:nth-last-child(2)
+{
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.slide-in-wrap #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span:nth-last-child(3)
+{
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(0px, -4px);
+      -ms-transform: rotate(45deg) translate(0px, -4px);
+          transform: rotate(45deg) translate(0px, -4px);
+  background: white;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.slide-in-wrap #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span:nth-last-child(2)
+{
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+      -ms-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.slide-in-wrap #menuToggle input:checked ~ .menuToggle-wrap .hamburger-icon span
+{
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+      -ms-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+  background: white;
+}
+
+
+
+
+/* Styling the Featured Listings that are inside the slide in menu */
+.slide-in-wrap.right_slide-in-wrap .mls_listing_card_row {
+    width: 462px;
+    margin: 2px 0;
+}
+
+#slide-in-wrap_menu-wrap #right_menu_select_order {
+    width: 464px;
+    border: solid 0px rgba(198, 8, 0, 1);
+    color: black;
+    margin: 3px 0;
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .agency_logo {
+    -webkit-filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(298deg) brightness(115%) contrast(102%);
+            filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(298deg) brightness(115%) contrast(102%);
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row:hover {
+    background-color: rgba(198, 8, 0, .84);
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .favorite_mark:hover {
+    background-image: url(/theme/pineriverhomes.com/photo/over-no-saved.png);
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .favorite_mark.saved {
+    background-image: url(/theme/pineriverhomes.com/photo/saved.png);
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .Active {
+    color: lightgreen;
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .Sold {
+    color: red;
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .Pending {
+    color: lightskyblue;
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .Coming.Soon {
+    color: yellow;
+}
+
+/* Hide empty transaction boxes */
+#slide-in-wrap_menu-wrap .mls_listing_card_row .transaction:empty {
+    display: none;
+}
+
+#slide-in-wrap_menu-wrap .mls_listing_card_row .transaction {
+    background-color: rgba(198, 8, 0, 0.84);
+    color: white;
+}
+
+
+@media only screen and (max-width: 533px) {
+    .slide-in-wrap.right_slide-in-wrap #menu {
+        width: calc(100vw - 58px);
+    }
+}
+
+/* Dropdown Menu Items */
+.dropdown ul {
+  list-style: none;
+  margin-left: 2rem;
+}
+
+#slide-in-wrap_menu-wrap .dropdown ul {
+  list-style: none;
+  margin-left: 0rem;
+}
+
+
+
+
+.cta_text-container .cta_text-wrap div h1 {color: red;}

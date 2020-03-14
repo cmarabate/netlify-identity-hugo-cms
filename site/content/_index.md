@@ -1,6 +1,6 @@
 ---
-title: Great coffee with a conscience
-subtitle: Support sustainable farming while enjoying a cup
+title: Lorem ipsum
+subtitle: Lorem ipsum dolor sit
 shortSentence: Lorem ipsum dolor sit amet consectetur
 bg1: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F14.jpg?v=1581350380951
 bg2: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F4.jpg?v=1581350379383
@@ -24,7 +24,7 @@ blurb:
 intro:
   heading: What we offer
   text: >-
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
+    Kaldi is the ultimate spot for coffee lovers who want to zytima learn about their
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone.
