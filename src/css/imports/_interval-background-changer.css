@@ -4,7 +4,7 @@
     transition: background 1.8s ease-in-out;
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 77px);
+    height: 100vh;
 }
 
 

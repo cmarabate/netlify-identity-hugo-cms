@@ -1,15 +1,39 @@
+::-moz-selection {
+  background-color: var(--highlight);
+}
+
 ::selection {
   background-color: var(--highlight);
 }
 
 /* Used in the navbar */
 .divider-grey {
-  box-shadow: inset 0 -4px 0 var(--grey-1);
+  -webkit-box-shadow: inset 0 -4px 0 var(--grey-1);
+          box-shadow: inset 0 -4px 0 var(--grey-1);
   /* Link hover states */
   & a {
+    -webkit-transition: var(--hover-transition);
+    -o-transition: var(--hover-transition);
     transition: var(--hover-transition);
   }
   & ul a:hover, & ul a:focus {
-    box-shadow: inset 0 -4px 0 var(--primary);
+    -webkit-box-shadow: inset 0 -4px 0 var(--primary);
+            box-shadow: inset 0 -4px 0 var(--primary);
   }
 }
+
+
+body::-webkit-scrollbar-track {
+    background: red;
+}
+body::-webkit-scrollbar-track:hover {
+    background: green;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: green;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+

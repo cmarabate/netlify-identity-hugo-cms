@@ -1,93 +1,174 @@
-  <div class="fixed-wrap">
+<div class="fixed-wrap">
     <div class="name-logo">
-      <a href="/"
-        ><img
-          src="https://cdn.glitch.com/d5c2646f-7f40-40ae-90bd-b82852980f4b%2Flogo.png?v=1581616618866"
-      /></a>
+      <a href="/"><img src="https://cdn.glitch.com/d5c2646f-7f40-40ae-90bd-b82852980f4b%2Flogo.png?v=1581616618866"></a>
     </div>
     <div class="desktop-menu">
-      <nav id="main-menu" class="main-menu" aria-label="Main menu">
-        <ul>
-          <li>
-            <a>Dropdown Menu Item</a>
-            <ul>
-              <li><a>‣ Dropdown Item</a></li>
-              <li><a>‣ Dropdown Item</a></li>
-              <li><a>‣ Dropdown Item</a></li>
-              <li><a>‣ Dropdown Item</a></li>
-              <li><a>‣ Dropdown Item</a></li>
-            </ul>
-          </li>
-          <div id="menu"></div>
-          <div id="menuItems"></div>
-        </ul>
-      </nav>
-    </div>
-    <!-- fixed-wrap -->
+        <nav id="main-menu" class="main-menu" aria-label="Main menu">
+          <ul>
+            <li><a>Dropdown Menu Item</a>
+              <ul>
+                <li><a>‣ Dropdown Item</a></li>
+                <li><a>‣ Dropdown Item</a></li>
+                <li><a>‣ Dropdown Item</a></li>
+                <li><a>‣ Dropdown Item</a></li>
+                <li><a>‣ Dropdown Item</a></li>
+              </ul>
+            </li>
+            <li><a>Top-level Menu Item</a></li>
+            <li><a>Top-level Menu Item</a></li>
+          </ul>
+        </nav>
+    </div><!-- fixed-wrap -->
 
     <div class="mobile-menu">
-      <nav role="navigation">
-        <div id="menuToggle">
-          <!--
+        <nav role="navigation">
+
+            <div id="menuToggle">
+                <!--
                 A fake / hidden checkbox is used as click reciever,
                 so I can use the :checked selector on it.
                 -->
-          <input type="checkbox" />
+                <input type="checkbox" />
 
-          <!--
+                <!--
                 Some spans to act as a hamburger.
                 -->
 
-          <div class="menuToggle-wrap">
-            <div class="hamburger-icon">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <div class="text-next-to-hamburger">
-              Menu
-            </div>
-          </div>
+                <div class="menuToggle-wrap">
+                    <div class="hamburger-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="text-next-to-hamburger">
+                        Menu
+                    </div>
+                </div>
 
-          <!--
+                <!--
                 Menu has to be inside of the button
                 -->
-          <ul id="menu">
-            <div id="slide-in-wrap_menu-wrap">
-              <li>
-                <ul>
-                  <div x-data="{ open: false }">
-                    <a
-                      @mouseenter.once="
-                                                                fetch('menus/menu-items/dropdown-menu-items/main-menu/dropdown-name.html')
-                                                                    .then(response => response.text())
-                                                                    .then(html => { $refs.dropdown.innerHTML = html })
-                                                            "
-                      @click="open = true"
-                      >Dropdown Menu +</a
-                    >
-
-                    <div
-                      x-ref="dropdown"
-                      x-show="open"
-                      @click.away="open = false"
-                      class="dropdown"
-                    >
-                      <div class="loading">
-                        Loading...
-                      </div>
+                <ul id="menu">
+                    <div id="slide-in-wrap_menu-wrap">
+                      <ul>
+                        <li><a>‣ Main Dropdown Item</a></li>
+                        <li><a>‣ Main Dropdown Item</a></li>
+                        <li><a>‣ Main Dropdown Item</a></li>
+                        <li><a>‣ Main Dropdown Item</a></li>
+                        <li><a>‣ Main Dropdown Item</a></li>
+                      </ul>
                     </div>
-                  </div>
-                  <li><a>Top-level Menu Item</a></li>
-                  <li><a>Top-level Menu Item</a></li>
                 </ul>
-              </li>
             </div>
-          </ul>
+        </nav>
+    </div><!-- mobile-menu -->
+
+</div>
+
+
+<div class="slide-in-wrap left_slide-in-wrap left_menu_slide-in-wrap">
+    <nav role="navigation">
+        <div id="menuToggle">
+            <!--
+            A fake / hidden checkbox is used as click reciever,
+            so I can use the :checked selector on it.
+            -->
+            <input type="checkbox" />
+            <!--
+            Some spans to act as a hamburger.
+            -->
+            <div class="menuToggle-wrap">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="text-next-to-hamburger">
+                    Left Menu
+                </div>
+            </div>
+            <!--
+            Menu has to be inside of the button
+            -->
+            <ul id="menu">
+                <h3>Left Menu</h3>
+                <div id="slide-in-wrap_menu-wrap">
+                    <div id="left_menu_content">
+                        <ul id="left_menu">
+                            <div id="slide-in-wrap_menu-wrap">
+                              <li> <a>‣ Left Dropdown Menu</a></li>
+                                <ul>
+                                  <li><a>‣ Left Dropdown Item</a></li>
+                                  <li><a>‣ Left Dropdown Item</a></li>
+                                  <li><a>‣ Left Dropdown Item</a></li>
+                                  <li><a>‣ Left Dropdown Item</a></li>
+                                  <li><a>‣ Left Dropdown Item</a></li>
+                                </ul>
+                              <li><a>Left Menu Item</a></li>
+                              <li><a>Left Menu Item</a></li>
+                              <li><a>Left Menu Item</a></li>
+                              <li><a>Left Menu Item</a></li>
+                              <li><a>Left Menu Item</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
         </div>
-      </nav>
-    </div>
-    <!-- mobile-menu -->
-  </div>
-  <div w3-include-html="menus/left-menu.html"></div>
-  <div w3-include-html="menus/right-menu.html"></div>
+    </nav>
+</div><!-- slide-in-wrap left_slide-in-wrap left_menu_slide-in-wrap -->
+
+
+
+<div class="slide-in-wrap right_slide-in-wrap right_menu_slide-in-wrap">
+    <nav role="navigation">
+        <div id="menuToggle">
+            <!--
+            A fake / hidden checkbox is used as click reciever,
+            so I can use the :checked selector on it.
+            -->
+            <input type="checkbox" />
+            <!--
+            Some spans to act as a hamburger.
+            -->
+            <div class="menuToggle-wrap">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="text-next-to-hamburger">
+                    Right Menu
+                </div>
+            </div>
+            <!--
+            Menu has to be inside of the button
+            -->
+            <ul id="menu" style="align-text: right;">
+                <h3>Right Menu</h3>
+                <div id="slide-in-wrap_menu-wrap">
+                    <div id="right_menu_content">
+                        <ul id="right_menu">
+                            <div id="slide-in-wrap_menu-wrap">
+                              <li> <a>‣ Right Dropdown Menu</a></li>
+                                <ul>
+                                  <li><a>‣ Right Dropdown Item</a></li>
+                                  <li><a>‣ Right Dropdown Item</a></li>
+                                  <li><a>‣ Right Dropdown Item</a></li>
+                                  <li><a>‣ Right Dropdown Item</a></li>
+                                  <li><a>‣ Right Dropdown Item</a></li>
+                                </ul>
+                              <li><a>Right Menu Item</a></li>
+                              <li><a>Right Menu Item</a></li>
+                              <li><a>Right Menu Item</a></li>
+                              <li><a>Right Menu Item</a></li>
+                              <li><a>Right Menu Item</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+
+        </div>
+    </nav>
+</div><!-- slide-in-wrap right_slide-in-wrap right_menu_slide-in-wrap -->
