@@ -13,8 +13,6 @@ bg8: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F9.jpg?v=15813
 bg9: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F3.jpg?v=1581350381127
 bg10: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F5.jpg?v=1581350379241
 
-
-
 blurb:
   heading: Lorem Ipsum
   sub_heading: Lorem ipsum dolor sit
