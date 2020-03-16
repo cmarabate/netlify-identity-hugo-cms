@@ -22,7 +22,8 @@ body {
 
 p {
   margin-bottom: var(--spacing-medium);
-  max-width: 32rem;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 strong {
@@ -70,7 +71,8 @@ sup {
 .truncate {
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
 }
 
 @media (--breakpoint-not-small) {
@@ -94,7 +96,8 @@ sup {
   .truncate-ns {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
   }
 }
 
@@ -119,7 +122,8 @@ sup {
   .truncate-m {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
   }
 }
 
@@ -144,6 +148,7 @@ sup {
   .truncate-l {
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
   }
 }

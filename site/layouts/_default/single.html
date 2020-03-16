@@ -1,6 +1,9 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" "/img/7.jpg" "title" "This is where the heading goes" "subtitle" "This is where the subtitle goes") }}
+{{ partial "jumbotron" (dict "bg1" .Params.bg1 "bg2" .Params.bg2 "bg3" .Params.bg3 "bg4" .Params.bg4 "bg5" .Params.bg5 "bg6" .Params.bg6 "bg7" .Params.bg7 "bg8" .Params.bg8 "bg9" .Params.bg9 "bg10" .Params.bg10 "title" .Title "subtitle" .Params.subtitle "shortSentence" .Params.shortSentence) }}
+
+<div id="main-container" class="main-container">
 {{ .Content }}
+</div>
 
 {{ end }}
