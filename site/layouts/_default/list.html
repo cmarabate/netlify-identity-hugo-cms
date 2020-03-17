@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "bg1" .Params.bg1 "bg2" .Params.bg2 "bg3" .Params.bg3 "bg4" .Params.bg4 "bg5" .Params.bg5 "bg6" .Params.bg6 "bg7" .Params.bg7 "bg8" .Params.bg8 "bg9" .Params.bg9 "bg10" .Params.bg10 "title" .Title "subtitle" .Params.subtitle "shortSentence" .Params.shortSentence) }}
+{{ partial "jumbotron" (dict "bg1" .Params.bg1 "bg2" .Params.bg2 "bg3" .Params.bg3 "bg4" .Params.bg4 "bg5" .Params.bg5 "bg6" .Params.bg6 "bg7" .Params.bg7 "bg8" .Params.bg8 "bg9" .Params.bg9 "bg10" .Params.bg10 "title" .Title "jumbotronHeading" .Params.jumbotronHeading "jumbotronSubtitle" .Params.jumbotronSubtitle "jumbotronShortSentence" .Params.jumbotronShortSentence) }}
+
+{{ partial "breadcrumbs" . }}
 
 <div class="mw7 center">
   <ul class="flex-ns flex-wrap mhn1-ns pa3">

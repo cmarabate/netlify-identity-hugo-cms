@@ -1,3 +1,23 @@
+#breadcrumbs {
+  padding: 10px;
+}
+
+#breadcrumbs a {
+  color: #233C99;
+  font-weight: bold;
+}
+
+#breadcrumbs a.current-page {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+}
+
+.ph3.bg-off-white, .mw6.center.ph3.pv4 {
+  position: relative;
+  top: 50px;
+}
+
 .name-logo {
   color: white;
   position: relative;

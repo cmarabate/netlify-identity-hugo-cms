@@ -36,15 +36,15 @@
       <section>
         <div class="cta_text cta_text-wrap">
           <div>
-            {{ if .subtitle }}
+            {{ if .jumbotronSubtitle }}
               <h3 id="smallTextAboveHeading">
-                {{.subtitle}}
+                {{.jumbotronSubtitle}}
               </h3>
             {{ end }}
-            <h1 id="ctaHeading">{{.title}}</h1>
-            {{ if .shortSentence }}
+            <h1 id="ctaHeading">{{.jumbotronHeading}}</h1>
+            {{ if .jumbotronShortSentence }}
               <p id="ctaText">
-                {{.shortSentence}}
+                {{.jumbotronShortSentence}}
               </p>
             {{ end }}
           </div>

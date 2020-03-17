@@ -1,7 +1,8 @@
 ---
-title: Lorem ipsum
-subtitle: Lorem ipsum dolor sit
-shortSentence: Lorem ipsum dolor sit amet consectetur
+title: Home
+jumbotronHeading: Lorem ipsum
+jumbotronSubtitle: Lorem ipsum dolor sit
+jumbotronShortSentence: Lorem ipsum dolor sit amet consectetur
 bg1: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F14.jpg?v=1581350380951
 bg2: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F4.jpg?v=1581350379383
 bg3: https://cdn.glitch.com/e84de467-ed15-4bee-8060-8057d038326b%2F13.jpg?v=1581350379510

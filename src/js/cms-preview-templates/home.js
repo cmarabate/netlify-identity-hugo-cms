@@ -14,7 +14,7 @@ export default class PostPreview extends React.Component {
     }
 
     return <div>
-        <Jumbotron image={image} bg1={entry.getIn(["data", "bg1"])} title={entry.getIn(["data", "title"])} subtitle={entry.getIn(["data", "subtitle"])} shortSentence={entry.getIn(["data", "shortSentence"])} />
+        <Jumbotron image={image} bg1={entry.getIn(["data", "bg1"])} title={entry.getIn(["data", "title"])} jumbotronSubtitle={entry.getIn(["data", "jumbotronSubtitle"])} jumbotronShortSentence={entry.getIn(["data", "jumbotronShortSentence"])} />
 
         <div className="bg-grey-1 pv4">
           <div className="flex-l mhn1-l ph3 center mw7">
