@@ -67,6 +67,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "nvm": "0.0.4"
+    "nvm": "0.0.4",
+    "yarn": "^1.22.4"
   }
 }
